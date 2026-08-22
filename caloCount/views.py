@@ -20,3 +20,9 @@ def index(request):
         'total_calories': total_calories,
         'form': form,
     })
+
+def delete_food(request, item_id):
+    item = get_object_or_404(FoodItem, id=item_id)
+    if request.method == 'POST':
+        item.delete()
+    return redirect('index')
