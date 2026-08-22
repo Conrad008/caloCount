@@ -26,3 +26,8 @@ def delete_food(request, item_id):
     if request.method == 'POST':
         item.delete()
     return redirect('index')
+
+def reset_calories(request):
+    if request.method == 'POST':
+        FoodItem.objects.all().delete()
+    return redirect('index')
