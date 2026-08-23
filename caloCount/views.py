@@ -15,7 +15,7 @@ def index(request):
             form.save()
             return redirect('index')
 
-    return render(request, 'calorie_tracker/index.html', {
+    return render(request, 'index.html', {
         'food_items': food_items,
         'total_calories': total_calories,
         'form': form,
